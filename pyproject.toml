@@ -1,0 +1,38 @@
+[project]
+name = "yugioh-llm"
+version = "0.1.0"
+description = "Yu-Gi-Oh LLM"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "kagglehub>=1.0.2",
+    "pandas>=3.0.3",
+    "pandas-stubs==3.0.3.260530",
+    "scikit-learn>=1.9.0",
+    "tokenizers>=0.23.1",
+    "torch>=2.12.1",
+    "wandb>=0.28.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_from_scratch"]
+
+[tool.ty.environment]
+root = ["./src"]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

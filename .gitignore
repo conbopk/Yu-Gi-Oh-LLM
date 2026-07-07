@@ -1,0 +1,41 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# uv
+.uv/
+
+# Secrets / environment (NEVER commit keys)
+.env
+.env.*
+!.env.example
+
+# Generated datasets (produced by scripts/download_data.py & create_dataset.py)
+data/raw/.complete
+
+# Weights & Biases logs
+wandb/
+
+# Test / tooling caches
+.pytest_cache/
+.ty/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
